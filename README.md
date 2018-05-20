@@ -102,6 +102,6 @@ After partitioning, the newly created drive (D) will be listed.
 ![alt text](https://raw.githubusercontent.com/PankajNithin/Isci-setup-bits/master/f.png)
 
 
-
+This drive can be treated as a normal physical harddrive as long as the connection to the target is active.
 
 
