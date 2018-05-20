@@ -1,6 +1,6 @@
-# Isci-setup-bits
+# Iscsi-setup-bits
 
-The following steps were used for establishing  connection between an Isci target (Ubuntu system installed over virtualbox in Windows 10) and an Isci client (Windows 10)
+The following steps were used for establishing  connection between an Iscsi target (Ubuntu system installed over virtualbox in Windows 10) and an Iscsi client (Windows 10)
 
 **Updating the package manager**
 ---
@@ -35,7 +35,7 @@ In the file, we'll set ISCSITARGET_ENABLE=true
 ---
 **Creating a storage directory**
 ---
-Next step is to create an Isci LUN. LUN stands for logical Unit Number (Storage unit).  A LUN represents an individually addressable (logical) SCSI device that is part of a physical SCSI device (target). In this demo, we'll use file based LUN.
+Next step is to create an Iscsi LUN. LUN stands for logical Unit Number (Storage unit).  A LUN represents an individually addressable (logical) SCSI device that is part of a physical SCSI device (target). In this demo, we'll use file based LUN.
 
 We'll use the basic linux `dd` command for creating a file based storage unit inside */media/volume0/* directory.<br/>
 `dd if=/dev/zero of=/media/volume0/storlun0.bin count=0 obs=1 seek=1G`<br/>
@@ -47,7 +47,7 @@ The above command will create an LUN with a capacity of 1GB.
 Creating and Naming Target
 ---
 
-Next we'll edit the Isci Daemon configuration file `/etc/ietd.conf ` by specifying the *IQN* (Isci Qualified Name) and the target LUN details.<br/>
+Next we'll edit the Iscsi Daemon configuration file `/etc/ietd.conf ` by specifying the *IQN* (Iscsi Qualified Name) and the target LUN details.<br/>
 
 ![alt text](https://raw.githubusercontent.com/PankajNithin/Isci-setup-bits/master/step-5.png)
 
@@ -66,10 +66,10 @@ The unique IQN name is given as *iqn.2018-05.example.bits:storage.sys0* and LUN 
 ![alt text](https://raw.githubusercontent.com/PankajNithin/Isci-setup-bits/master/step-7.png)
 
 ---
-**Testing with the inbuilt windows Isci client**
+**Testing with the inbuilt windows Iscsi client**
 ---
 
-Open the built-in windows Isci initiator and provide the target system IP for discovery
+Open the built-in windows Iscsi initiator and provide the target system IP for discovery
 
 ![alt text](https://raw.githubusercontent.com/PankajNithin/Isci-setup-bits/master/step-8.png)
 
@@ -79,13 +79,13 @@ Once connected,click on Done.
 
 ![alt text](https://raw.githubusercontent.com/PankajNithin/Isci-setup-bits/master/step-10.png)
 
-Within the disk management tab, the unallocated Isci target will be listed.
+Within the disk management tab, the unallocated Iscsi target will be listed.
 
 ![alt text](https://raw.githubusercontent.com/PankajNithin/Isci-setup-bits/master/unallocated.png)
 
 ![alt text](https://raw.githubusercontent.com/PankajNithin/Isci-setup-bits/master/computer_management.png)
 
-Create a simple parttioning of the unallocated Isci target.
+Create a simple parttioning of the unallocated Iscsi target.
 
 ![alt text](https://raw.githubusercontent.com/PankajNithin/Isci-setup-bits/master/a.png)
 
